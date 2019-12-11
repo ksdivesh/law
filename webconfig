@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     This configuration file is required if iisnode is used to run node processes behind
+     IIS or IIS Express.  For more information, visit:
+
+     https://github.com/tjanczuk/iisnode/blob/master/src/samples/configuration/web.config
+-->
+
+<configuration>
+  <system.webServer>
+	 
+    <!-- Visit http://blogs.msdn.com/b/windowsazure/archive/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites.aspx for more information on WebSocket support -->
+    <webSocket enabled="false" />
+	  
+    <handlers>
+      <!-- Indicates that the server.js file is a node.js site to be handled by the iisnode module -->
+      <add name="iisnode" path="index.js" verb="\*" modules="iisnode" />
+    </handlers>
+    <rewrite>
+      <rules>
+        <!-- Do not interfere with requests for node-inspector debugging -->
+        <rule name="NodeInspector" patternSyntax="ECMAScript" stopProcessing="true">
+          <match url="^index.js\/debug[\/]?" />
+        </rule>
+
+        <!-- First we consider whether the incoming URL matches a physical file in the /public folder -->
+        <rule name="StaticContent">
+          <action type="Rewrite" url="public{REQUEST_URI}" />
+        </rule>
+
+        <!-- All other URLs are mapped to the node.js site entry point -->
+        <rule name="DynamicContent">
+          <conditions>
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="True" />
+          </conditions>
+          <action type="Rewrite" url="index.js" />
+        </rule>
+      </rules>
+    </rewrite>
+    
+    <!-- 'bin' directory has no special meaning in node.js and apps can be placed in it -->
+    <security>
+      <requestFiltering>
+        <hiddenSegments>
+          <remove segment="bin" />
+        </hiddenSegments>
+      </requestFiltering>
+    </security>
+
+    <!-- Make sure error responses are left untouched -->
+    <httpErrors existingResponse="PassThrough" errorMode="Detailed">
+            <remove statusCode="502" subStatusCode="-1" />
+            <remove statusCode="501" subStatusCode="-1" />
+            <remove statusCode="500" subStatusCode="-1" />
+            <remove statusCode="412" subStatusCode="-1" />
+            <remove statusCode="406" subStatusCode="-1" />
+            <remove statusCode="405" subStatusCode="-1" />
+            <remove statusCode="404" subStatusCode="-1" />
+            <remove statusCode="403" subStatusCode="-1" />
+            <remove statusCode="401" subStatusCode="-1" />
+            <remove statusCode="400" />
+            <error statusCode="400" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\bad_request.html" />
+            <remove statusCode="407" />
+            <error statusCode="407" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\proxy_authentication_required.html" />
+            <remove statusCode="414" />
+            <error statusCode="414" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\request-uri_too_long.html" />
+            <remove statusCode="415" />
+            <error statusCode="415" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\unsupported_media_type.html" />
+            <remove statusCode="503" />
+            <error statusCode="503" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\maintenance.html" />
+            <error statusCode="401" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\unauthorized.html" />
+            <error statusCode="403" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\forbidden.html" />
+            <error statusCode="404" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\not_found.html" />
+            <error statusCode="405" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\method_not_allowed.html" />
+            <error statusCode="406" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\not_acceptable.html" />
+            <error statusCode="412" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\precondition_failed.html" />
+            <error statusCode="500" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\internal_server_error.html" />
+            <error statusCode="501" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\not_implemented.html" />
+            <error statusCode="502" prefixLanguageFilePath="" path="C:\Inetpub\vhosts\jnf.net.in\error_docs\bad_gateway.html" />
+        </httpErrors>
+	  
+	  
+	  
+
+    <!--
+      You can control how Node is hosted within IIS using the following options:
+        * watchedFiles: semi-colon separated list of files that will be watched for changes to restart the server
+        * node_env: will be propagated to node as NODE_ENV environment variable
+        * debuggingEnabled - controls whether the built-in debugger is enabled
+
+      See https://github.com/tjanczuk/iisnode/blob/master/src/samples/configuration/web.config for a full list of options
+    -->
+    <!--<iisnode watchedFiles="web.config;*.js"/>-->
+	  <iisnode devErrorsEnabled="true" nodeProcessCommandLine="node.exe --no-deprecation --no-warnings" 
+			   debuggerPortRange="5058-6058"  
+      debuggerPathSegment="debug"  
+      maxNamedPipeConnectionRetry="3"  
+      namedPipeConnectionRetryDelay="2000" />
+	   
+	 
+  </system.webServer>
+	
+	 <system.web>
+        <customErrors mode="Off"/>
+        <compilation debug="true"/>
+    </system.web>
+	
+</configuration>

@@ -8,7 +8,7 @@ const path = require("path");
 let apiRoutes = require("./routes/api-routes");
 let appRoutes = require("./routes/app-routes");
 
-var port = 8000;
+var port = process.env.PORT || 5000;
 
 app.set("view engine", "ejs");
 app.use(partials());

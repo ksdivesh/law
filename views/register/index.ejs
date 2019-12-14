@@ -1,5 +1,40 @@
 <%- include ('../partials/header', {title:title}) %>
 
+<style>
+  .custom-select {
+    font-weight: normal;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #777;
+    background: #fff;
+    outline: none;
+    font-size: 0.91em;
+    padding: 1em 1em;
+    border: none;
+    letter-spacing: 1px;
+    margin-right: 2px;
+    border: 1px solid #cccaca;
+    margin-bottom: 7px;
+    text-align: center;
+  }
+
+  .custom-button {
+    outline: none;
+    padding: 0.8em 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 1em;
+    border: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #23b684;
+    box-shadow: ;
+  }
+</style>
+
 <div class="inner_page_agile">
   <h3>Register</h3>
   <p>Add Some Short Description</p>
@@ -27,124 +62,72 @@
           <form action="#" method="post">
             <input
               type="text"
-              name="name"
+              name="first_name"
+              id="first_name"
               placeholder="First Name"
-              required=""
             />
+
+            <input
+              type="text"
+              name="middle_name"
+              id="middle_name"
+              placeholder="Middle Name"
+            />
+
             <input
               type="text"
               name="name"
+              name="last_name"
+              id="last_name"
               placeholder="Last Name"
-              required=""
-            />
-            <input type="email" name="email" placeholder="Email" required="" />
-            <input
-              type="password"
-              name="password"
-              id="password1"
-              placeholder="Password"
-              required=""
-            />
-            <input
-              type="password"
-              name="password"
-              id="password2"
-              placeholder="Confirm Password"
-              required=""
             />
 
-            <input
-              type="text"
-              name="regno"
-              id="regno"
-              placeholder="Registration No."
-              required=""
-            />
+            <input type="text" name="mobile" id="mobile" placeholder="Mobile" />
 
             <select
-              id="country13"
-              onchange="change_country(this.value)"
-              class="frm-field required"
-            >
-              <option value="null">Work Experience</option>
-              <option value="">Fresher</option>
-              <option value="">0</option>
-              <option value="">1</option>
-              <option value="">2</option>
-              <option value="">3</option>
-              <option value="">4</option>
-              <option value="">5</option>
-              <option value="">6</option>
-              <option value="">7</option>
-              <option value="">8</option>
-              <option value="">9</option>
-              <option value="">10</option>
-              <option value="">11</option>
-              <option value="">12</option>
-              <option value="">13</option>
-              <option value="">14</option>
-              <option value="">15</option>
-            </select>
-            <select
-              id="country13"
-              onchange="change_country(this.value)"
-              class="frm-field required"
-            >
-              <option value="null">Qualification</option>
-              <option value="">Bsc</option>
-              <option value="">BTech</option>
-              <option value="">Mca</option>
-              <option value="">BCA</option>
-              <option value="">Diploma</option>
-              <option value="">Other</option>
-            </select>
-
-            <select
-              id="country13"
-              onchange="change_country(this.value)"
-              class="frm-field required"
-            >
-              <option value="null">Type Of Law</option>
-              <option value="">Defense</option>
-              <option value="">Property</option>
-              <option value="">Business</option>
-              <option value="">Labour</option>
-            </select>
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Street Address"
-              required=""
-            />
-
-            <select
-              id="country13"
-              onchange="change_country(this.value)"
-              class="frm-field required"
+              id="state"
+              name="state"
+              class="frm-field custom-select required"
             >
               <option value="null">State</option>
-              <option value="">Haryana</option>
-              <option value="">Delhi</option>
-              <option value="">Punjab</option>
-              <option value="">Bihar</option>
+
+              <% for(var i = 0; i < states.length; i++){ %>
+              <option value="<%=states[i].id %>"><%=states[i].name %></option>
+              <% } %>
             </select>
 
             <select
-              id="country13"
-              onchange="change_country(this.value)"
-              class="frm-field required"
+              id="district"
+              name="district"
+              class="frm-field custom-select required"
             >
-              <option value="null">District</option>
-              <option value="">Faridabad</option>
-              <option value="">Ballabhgarh</option>
-              <option value="">Ghaziabad</option>
-              <option value="">Agra</option>
+              <option value="">District</option>
             </select>
 
-            <input type="text" name="name" placeholder="Pincode" required="" />
+            <input type="text" name="pin" id="pin" placeholder="Pincode" />
 
-            <input type="submit" value="Register" />
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              placeholder="Confirm Password"
+            />
+
+            <input
+              type="button"
+              id="registerBTN"
+              class="custom-button"
+              value="Register"
+            />
+
+            <div id="msg"></div>
           </form>
         </div>
         <p class="reg">
@@ -215,7 +198,7 @@
             placeholder="Enter Email Address..."
             required=""
           />
-          <input type="submit" value="Submit" />
+          <input type="button" value="Submit" id="submitBTN" />
         </form>
       </div>
       <div class="clearfix"></div>
@@ -247,7 +230,7 @@
               <a href="#"><i class="fa fa-facebook"></i></a>
             </li>
             <li>
-              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-twitstateter"></i></a>
             </li>
             <li>
               <a href="#"><i class="fa fa-rss"></i></a>
@@ -261,3 +244,5 @@
 </div>
 
 <%- include('../partials/footer') %>
+
+<script src="/js/register.js"></script>

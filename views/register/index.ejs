@@ -5,7 +5,7 @@
     font-weight: normal;
     width: 100%;
     border: none;
-    outline: none;
+    outline: none; 
     color: #777;
     background: #fff;
     outline: none;
@@ -57,6 +57,7 @@
       <h3 class="tittle three">Register Now</h3>
     </div>
     <div class="inner_sec_grids_info_w3ls">
+      <div id="smsg"></div>
       <div class="signin-form">
         <div class="login-form-rec">
           <form action="#" method="post">
@@ -127,7 +128,8 @@
               value="Register"
             />
 
-            <div id="msg"></div>
+            
+            <div id="msg" style="margin-top:10px;"></div>
           </form>
         </div>
         <p class="reg">
@@ -245,4 +247,5 @@
 
 <%- include('../partials/footer') %>
 
+<script src="/js/general_helper.js"></script>
 <script src="/js/register.js"></script>

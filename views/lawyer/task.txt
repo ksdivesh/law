@@ -1,0 +1,9 @@
+profiling  4hr 
+edit profile 2hr
+searching from home 4hr
+advance search 2hr
+lawyer list dynamic 4hr
+login 2hr
+admin to view lawyers list 4hr
+about us 1hr
+

@@ -1,4 +1,6 @@
+const md5 = require("md5"); 
 const table = "clients";
+
 
 class Client {
   get(where = "", orderby = "") {
@@ -20,6 +22,29 @@ class Client {
       });
     });
   }
+
+  login(data){
+    data.password = md5(data.password); 
+    let sql = ` SELECT * FROM ${table} WHERE username = '${data.username}' AND password = '${data.password}' AND usertype = 'CLIENT' `; 
+    
+    
+
+    return new Promise((resolve, reject)=>{
+      db.query(sql, function(err, result, fields){
+        if(err) reject(err); 
+
+        if(result.length > 0){
+          console.log(result[0].id); 
+          resolve(result[0].id); 
+        }
+        else{
+          reject(false); 
+        }
+
+      })
+    }); 
+  }
+
 
   add(data) {
     let objArray = this.mapObject(data);

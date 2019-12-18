@@ -4,3 +4,6 @@ exports.index = (req, res) => {
 
   res.render("home/index", data);
 };
+
+
+

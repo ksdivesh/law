@@ -10,6 +10,13 @@ let lawyerDetailController = require("../controller/Lawyerdetail");
 let serviceController = require("../controller/Service");
 let stateController = require("../controller/State");
 
+//account area
+
+let accountDashbaordController = require("../controller/account/Dashboard"); 
+let accountLogoutController = require("../controller/account/Logout"); 
+//end
+
+
 let adminDashboardController = require("../controller/admin/Dashboard");
 
 router.get("/", homeController.index);
@@ -19,11 +26,23 @@ router.get("/about", aboutController.index);
 router.get("/register", registerController.index);
 router.post("/register/save", registerController.save);
 router.get("/login", loginController.index);
+router.post("/login/process",loginController.process); 
 router.get("/lawyer", lawyerController.index);
 router.get("/lawyer-detail", lawyerDetailController.index);
 router.get("/service", serviceController.index);
 router.get("/state", stateController.index);
 router.get("/state/cities/:id", stateController.cities);
+
+
+//account area part
+
+router.get("/account/dashboard",accountDashbaordController.index); 
+router.get("/account",accountDashbaordController.index); 
+router.get("/account/logout",accountLogoutController.index); 
+//end
+
+
+
 
 router.get("/admin", adminDashboardController.index);
 router.get("/admin/dashboard", adminDashboardController.index);

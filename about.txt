@@ -1,0 +1,16 @@
+
+Rajivo.com is a unique platform of redox martfolio where you get the information of more than one lawyers from all the courts of India. 
+
+Feature: - 
+
+1) District wise complete information of all the lawyers 
+2) Visiting charge information 
+3) Fee information 
+4) Consulting system 
+5) free call alert
+6) Official mobile numbers of free jurists / lawyers 
+7) Free Registration 
+
+Objective:- 
+
+  The information of jurists / lawyers is easily available to you, so that you will get jurists / lawyers Be easy to find.

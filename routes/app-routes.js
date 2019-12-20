@@ -13,6 +13,7 @@ let stateController = require("../controller/State");
 //account area
 
 let accountDashbaordController = require("../controller/account/Dashboard"); 
+let accountProfileController = require("../controller/account/Profile"); 
 let accountLogoutController = require("../controller/account/Logout"); 
 //end
 
@@ -32,15 +33,16 @@ router.get("/lawyer-detail", lawyerDetailController.index);
 router.get("/service", serviceController.index);
 router.get("/state", stateController.index);
 router.get("/state/cities/:id", stateController.cities);
+ 
 
+//account area start
 
-//account area part
+router.get("/account", accountDashbaordController.index); 
+router.get("/account/dashboard", accountDashbaordController.index);
+router.get("/account/profile", accountProfileController.index);  
+router.get("/account/logout", accountLogoutController.index); 
 
-router.get("/account/dashboard",accountDashbaordController.index); 
-router.get("/account",accountDashbaordController.index); 
-router.get("/account/logout",accountLogoutController.index); 
 //end
-
 
 
 

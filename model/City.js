@@ -1,6 +1,16 @@
 const table = "districts";
+const dbConnection = require("../helper/db"); 
+
+
 
 class City {
+
+  constructor(){
+    dbConnection.connectToDB(); 
+  }
+
+
+
   listByStateId(stateId, orderby = "") {
     let sql = `SELECT *  FROM ${table} WHERE state_id = ${stateId}`;
 
@@ -14,6 +24,7 @@ class City {
         resolve(result, fields);
       });
     });
+    dbConnection.closeConnection();
   }
 }
 

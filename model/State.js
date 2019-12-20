@@ -1,6 +1,16 @@
 const table = "states";
+const dbConnection = require("../helper/db"); 
+
+
 
 class State {
+
+
+  constructor(){
+    dbConnection.connectToDB(); 
+  }
+
+
   list(orderby = "") {
     let sql = `SELECT  * FROM ${table} `;
 
@@ -13,6 +23,9 @@ class State {
         if (err) reject(err);
         resolve(result, fields);
       });
+
+      dbConnection.closeConnection(); 
+
     });
   }
 }

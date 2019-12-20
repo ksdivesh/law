@@ -6,7 +6,8 @@ const mysql = require("mysql");
 const cors = require("cors")({ origin: true });
 const bodyParser = require("body-parser");
 const path = require("path");
-
+var Cookies = require("cookies"); 
+const auth = require("./helper/auth_helper"); 
 
 
 let apiRoutes = require("./routes/api-routes");
@@ -54,25 +55,42 @@ const connectToDB = (req, res, next) => {
 
 var checkUser = (req,res,next)=>{
 
-  console.log("Fresh sessin "); 
-  console.log(req.session); 
-  
-  if(req.session.accountLoggedIn === true){
-    next(); 
+  if(req.url.includes("/account")){
+    console.log("In account url");
+    
+    var keys = ['lawyer_auth']; 
+    var cookies = new Cookies(req, res, {keys:keys}); 
+    var clientLoggedIn = cookies.get("clientLoggedIn",{signed:true}); 
+    var clientId = cookies.get("clientId",{signed:true}); 
+    
+    console.log("Clientlogged in " + clientLoggedIn); 
+    console.log("Clientid " + clientId); 
+
   }
-  else{
-    // res.render("login/index",{title:"Login"}); 
-    res.redirect("/login"); 
-  }
+
+  console.log("In check user"); 
+  next(); 
+
 }
 
 
-app.use(connectToDB);
+const closeConnection = (req, res, next) =>{
+  db.end(function(err){
+    console.log("connection is close now"); 
+  })
+}
+
+
+// app.use(connectToDB);
+
+// app.use(checkUser); 
+app.use(auth.clientAuth); 
 
 app.use("/", appRoutes);
 app.use("/api", apiRoutes);
-app.use("/account",checkUser); 
+app.use("/account",appRoutes); 
 
+// app.use(closeConnection); 
 
 app.listen(port, function() {
   

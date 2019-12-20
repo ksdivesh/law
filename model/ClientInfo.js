@@ -1,6 +1,14 @@
 const table = "clients_info";
+const dbConnection = require("../helper/db"); 
+
 
 class ClientInfo {
+
+
+  constructor(){
+    dbConnection.connectToDB(); 
+  }
+
   get(where = "", orderby = "") {
     let sql = `SELECT * FROM ${table} `;
 
@@ -18,6 +26,9 @@ class ClientInfo {
         if (err) reject(err);
         resolve(result, fields);
       });
+
+      dbConnection.closeConnection(); 
+
     });
   }
 
@@ -31,6 +42,8 @@ class ClientInfo {
         if (err) reject(err);
         resolve(result);
       });
+
+      dbConnection.closeConnection(); 
     });
   }
 

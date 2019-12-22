@@ -1,127 +1,262 @@
 <%- include ('../partials/header', {title:title}) %>
 
-      
+
 
 <div class="services-breadcrumb_w3layouts">
       <div class="inner_breadcrumb">
-        <ul class="short_w3ls" _w3ls>
-          <li><a href="/account">Dashboard</a><span>|</span></li>
-          <li>Profile</li>
-        </ul>
+            <ul class="short_w3ls" _w3ls>
+                  <li><a href="/account">Dashboard</a><span>|</span></li>
+                  <li>Profile</li>
+            </ul>
       </div>
-    </div>
+</div>
 
 
 
-    <div class="inner_content_info_agileits">
+<div class="inner_content_info_agileits">
       <div class="container">
-        <div class="tittle_head_w3ls">
-          <h3 class="tittle three">Edit Profile</h3>
-        </div>
-        <div class="inner_sec_grids_info_w3ls">
-          <div id="smsg"></div>
-            <div class="row">
-                  <form action="#" method="POST"></form>
-                  <div class="col-sm-6">
-                        
-
-                              <div class="form-group">
-                                    <label for="">First Name</label>
-                                    <input type="text" name="" id="" class="form-control">
-                              </div>
-
-                              <div class="form-group">
-                                    <label for="">Middle Name</label>
-                                    <input type="text" name="" id="" class="form-control">
-                              </div>
-
-
-                              <div class="form-group">
-                                    <label for="">Last Name</label>
-                                    <input type="text" name="" id="" class="form-control">
-                              </div>
-
-
-                              <div class="form-group">
-                                    <label for="">State</label>
-                                    <input type="text" name="" id="" class="form-control">
-                              </div>
-
-                              <div class="form-group">
-                                    <label for="">District</label>
-                                    <input type="text" name="" id="" class="form-control">
-                              </div>
-
-                              <div class="form-group">
-                                    <label for="">Office Address</label>
-                                    <input type="text" name="" id="" class="form-control">
-                              </div>
-
-                              <div class="form-group">
-                                    <label for="">Pincode</label>
-                                    <input type="text" name="" id="" class="form-control">
-                              </div>
-
-
-                        
-                  </div>
-
-                  <div class="col-sm-6">
-
-                        <div class="form-group">
-                              <label for="">Telephone</label>
-                              <input type="text" name="" id="" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                              <label for="">Mobile</label>
-                              <input type="text" name="" id="" class="form-control">
-                        </div>
-
-
-
-                        <div class="form-group">
-                              <label for="">Experience Year</label>
-                              <input type="text" name="" id="" class="form-control">
-                        </div>
-
-
-                        <div class="form-group">
-                              <label for="">Registration No.</label>
-                              <input type="text" name="" id="" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                              <label for="">Specialized In</label>
-                              <input type="text" name="" id="" class="form-control">
-                        </div>
-
-
-                        <div class="form-group">
-                              <label for="">Work In</label>
-                              <input type="text" name="" id="" class="form-control">
-                        </div>
-
-
-                        <div class="form-group">
-                              <label for="">Profile Pic</label>
-                              <input type="file" name="" id="" class="">
-                        </div>
-
-
-                  </div>
-
-                  <div class="col-sm-12 text-center">
-                        <input type="submit" value="Save Profile" class="btn btn-success btn-lg">
-                  </div>
-
-
-            </form>
+            <div class="tittle_head_w3ls">
+                  <h3 class="tittle three">Edit Profile</h3>
             </div>
-        </div>
+            <div class="inner_sec_grids_info_w3ls">
+                  <div id="smsg"></div>
+                  <div class="row">
+                        <form action="#" method="POST" id="clientForm">
+                              <div class="col-sm-12" id="msg">
+
+                              </div>
+
+                              <div class="col-sm-6">
+
+
+                                    <div class="form-group">
+                                          <label for="">First Name</label>
+                                          <input type="text" name="first_name" id="first_name"
+                                                value="<%=clientInfo.first_name%>" class="form-control">
+                                          <input type="hidden" name="id" id="id" value="<%=clientInfo.id%>">
+                                          <input type="hidden" value="<%=clientInfo.clientid%>" name="clientid"
+                                                id="clientid">
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="">Middle Name</label>
+                                          <input type="text" name="middle_name" id="middle_name"
+                                                value="<%=clientInfo.middle_name%>" class="form-control">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                          <label for="">Last Name</label>
+                                          <input type="text" name="last_name" id="last_name"
+                                                value="<%=clientInfo.last_name%>" class="form-control">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                          <label for="">State</label>
+                                          <select name="state" id="state" class="form-control">
+                                                <% for(var i=0; i < states.length; i++){
+                                                            
+                                                %>
+
+
+                                                <option value="<%=states[i]["id"]%>"
+                                                      <%= clientInfo.state === states[i]["id"] ? "selected" : "" %>>
+                                                      <%=states[i]["name"]%>
+                                                </option>
+                                                <%}%>
+                                          </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="">District</label>
+
+                                          <select name="district" id="district" class="form-control">
+
+                                                <%for(var i=0; i < cities.length; i++){%>
+
+                                                <option value="<%=cities[i]["id"]%>"
+                                                      <%=clientInfo.district === cities[i]["id"] ? "selected" : ""%>>
+                                                      <%=cities[i]["name"]%>
+                                                </option>
+                                                <%}%>
+
+
+                                          </select>
+
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="">Office Address</label>
+                                          <input type="text" name="office_address" id="office_address"
+                                                value="<%=clientInfo.office_address%>" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="">Pincode</label>
+                                          <input type="text" name="pin" id="pin" value="<%=clientInfo.pin%>"
+                                                class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="">Consultation Fee</label>
+                                          <input type="text" name="consultation_fee" id="consultation_fee"
+                                                value="<%=clientInfo.consultation_fee%>" class="form-control">
+                                    </div>
+
+
+
+                              </div>
+
+                              <div class="col-sm-6">
+
+                                    <div class="form-group">
+                                          <label for="">Telephone</label>
+                                          <input type="text" name="telephone" id="telephone"
+                                                value="<%=clientInfo.telephone%>" class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="">Mobile</label>
+                                          <input type="text" name="mobile" id="mobile" value="<%=clientInfo.mobile%>"
+                                                class="form-control">
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                          <label for="">Experience Year</label>
+                                          <input type="text" name="experience" id="experience"
+                                                value="<%=clientInfo.experience%>" class="form-control">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                          <label for="">Registration No.</label>
+                                          <input type="text" name="regno" id="regno" value="<%=clientInfo.regno%>"
+                                                class="form-control">
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="">Specialized In</label>
+                                          <input type="text" name="specialized_in" id="specialized_in"
+                                                value="<%=clientInfo.specialized_in%>" class="form-control">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                          <label for="">Work In</label>
+                                          <input type="text" name="work_in" id="work_in" value="<%=clientInfo.work_in%>"
+                                                class="form-control">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                          <label for="">Profile Pic</label>
+                                          <input type="file" name="profile_pic" id="profile_pic" class="">
+                                    </div>
+
+
+                              </div>
+
+                              <div class="col-sm-12 text-center">
+                                    <input type="submit" id="btnSubmit" value="Save Profile"
+                                          class="btn btn-success btn-lg">
+                              </div>
+
+
+                        </form>
+                  </div>
+            </div>
       </div>
-    </div>
+</div>
 
 
 
 <%- include ('../partials/footer') %>
+<script src="/js/general_helper.js"></script>
+
+
+<script>
+
+      if (sessionStorage.getItem("pmsg")) {
+            createMessage("msg", "success", sessionStorage.getItem("pmsg"));
+            sessionStorage.removeItem("pmsg");
+      }
+
+
+      document.querySelector("#btnSubmit").addEventListener("click", async function (e) {
+            e.preventDefault();
+
+
+            let jsonData = {
+
+            };
+
+
+            document.querySelectorAll("input").forEach((input) => {
+                  jsonData[input.id] = input.value;
+            });
+
+
+
+            let response = await fetch("/account/profile/process", {
+                  method: "POST",
+                  headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                  },
+                  body: JSON.stringify(jsonData)
+            });
+
+            let result = await response.json();
+
+            if (result.status === 1) {
+                  sessionStorage.setItem("pmsg", "Profile Saved Successfully!");
+                  window.location = "/account/profile";
+            }
+
+
+
+      });
+
+
+
+
+      document
+            .getElementById("state")
+            .addEventListener("change", async function (event) {
+                  let response = await fetch("/state/cities/" + event.target.value);
+
+                  if (response.ok) {
+                        let json = await response.json();
+
+                        let district = document.getElementById("district");
+                        let child = district.lastElementChild;
+
+                        while (child) {
+                              district.removeChild(child);
+                              child = district.lastElementChild;
+                        }
+
+                        let option = document.createElement("option");
+                        option.setAttribute("value", "");
+                        option.textContent = "Select District";
+
+                        district.appendChild(option);
+
+                        json.forEach(city => {
+                              let cityOption = document.createElement("option");
+                              cityOption.setAttribute("value", city.id);
+                              cityOption.textContent = city.name;
+                              district.appendChild(cityOption);
+                        });
+                  }
+            });
+
+
+
+
+
+
+
+</script>

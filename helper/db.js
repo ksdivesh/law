@@ -1,11 +1,18 @@
 const mysql = require("mysql");
 
 exports.connectToDB = () => {
+  // const db = mysql.createConnection({
+  //   host: "remotemysql.com",
+  //   user: "a2AVResZMP",
+  //   password: "pOXXNddV6L",
+  //   database: "a2AVResZMP"
+  // });
+
   const db = mysql.createConnection({
-    host: "remotemysql.com",
-    user: "a2AVResZMP",
-    password: "pOXXNddV6L",
-    database: "a2AVResZMP"
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "lawyer"
   });
 
   db.connect(err => {
@@ -18,7 +25,7 @@ exports.connectToDB = () => {
   console.log("Connected to database");
 
   global.db = db;
-//   next();
+  //   next();
 };
 
 exports.closeConnection = (req, res, next) => {

@@ -1,15 +1,10 @@
-const md5 = require("md5"); 
+const md5 = require("md5");
 const table = "clients";
-const dbConnection = require("../helper/db"); 
-
-
 
 class Client {
-
-  constructor(){
-    dbConnection.connectToDB(); 
+  constructor() {
+    // dbConnection.connectToDB();
   }
-
 
   get(where = "", orderby = "") {
     let sql = `SELECT * FROM ${table} `;
@@ -23,40 +18,34 @@ class Client {
       sql += orderby;
     }
 
-
-
     return new Promise((resolve, reject) => {
       db.query(sql, function(err, result, fields) {
         if (err) reject(err);
         resolve(result, fields);
-        dbConnection.closeConnection(); 
+        // dbConnection.closeConnection();
       });
     });
   }
 
-  login(data){
-    data.password = md5(data.password); 
-    let sql = ` SELECT * FROM ${table} WHERE username = '${data.username}' AND password = '${data.password}' AND usertype = 'CLIENT' `; 
-    
+  login(data) {
+    data.password = md5(data.password);
+    let sql = ` SELECT * FROM ${table} WHERE username = '${data.username}' AND password = '${data.password}' AND usertype = 'CLIENT' `;
 
-    return new Promise((resolve, reject)=>{
-      db.query(sql, function(err, result, fields){
-        if(err) reject(err); 
+    return new Promise((resolve, reject) => {
+      db.query(sql, function(err, result, fields) {
+        if (err) reject(err);
 
-        if(result.length > 0){
-          console.log(result[0].id); 
-          resolve(result[0]); 
+        if (result.length > 0) {
+          console.log(result[0].id);
+          resolve(result[0]);
+        } else {
+          reject(false);
         }
-        else{
-          reject(false); 
-        }
+      });
 
-      }); 
-
-      dbConnection.closeConnection(); 
-    }); 
+      // dbConnection.closeConnection();
+    });
   }
-
 
   add(data) {
     let objArray = this.mapObject(data);
@@ -69,7 +58,7 @@ class Client {
         resolve(result);
       });
 
-      dbConnection.closeConnection(); 
+      // dbConnection.closeConnection();
     });
   }
 

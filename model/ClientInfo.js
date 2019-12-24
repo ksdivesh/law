@@ -1,4 +1,5 @@
 const table = "clients_info";
+const table_clients = "clients";
 
 class ClientInfo {
   constructor() {}
@@ -68,6 +69,34 @@ class ClientInfo {
     // .catch(err => {
     //   console.log(err);
     // });
+  }
+
+  getLawyers(start = 0, end = 0, strWhere = "", orderBy = "") {
+    let sql = `SELECT ci.*, c.username FROM ${table} ci 
+            INNER JOIN ${table_clients} c
+            ON c.id = ci.clientid`;
+
+    if (strWhere !== "") {
+      sql += ` AND 1=1 `;
+      sql += strWhere;
+    }
+
+    if (start !== 0 || end !== 0) {
+      sql += ` LIMIT ${start} ${end} `;
+    }
+
+    if (orderBy !== "") {
+      sql += orderBy;
+    }
+
+    console.log(sql);
+
+    return new Promise((resolve, reject) => {
+      db.query(sql, function(err, result, fields) {
+        if (err) reject(err);
+        resolve(result, fields);
+      });
+    });
   }
 
   mapObject(data) {

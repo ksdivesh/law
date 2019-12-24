@@ -46,7 +46,8 @@ const connectToDB = (req, res, next) => {
     host: "remotemysql.com",
     user: "a2AVResZMP",
     password: "pOXXNddV6L",
-    database: "a2AVResZMP"
+    database: "a2AVResZMP",
+    multipleStatements: true
   });
 
   // const db = mysql.createConnection({

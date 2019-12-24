@@ -32,6 +32,7 @@ router.get("/login", loginController.index);
 router.post("/login/process", loginController.process);
 router.get("/lawyer", lawyerController.index);
 router.get("/lawyer-detail", lawyerDetailController.index);
+router.get("/lawyer-detail/:id", lawyerDetailController.index);
 router.get("/service", serviceController.index);
 router.get("/state", stateController.index);
 router.get("/state/cities/:id", stateController.cities);

@@ -26,26 +26,32 @@
         </div>
         <div class="inner_sec_grids_info_w3ls">
             <div class="col-md-8 job_info_left">
+
+
+
+
+                <% clients.forEach((client)=>{ %>
                 <div class="tab_grid_prof">
                     <div class="col-sm-3 loc_1">
                         <a href="/lawyer-detail"><img src="images/pf1.jpg" alt=""></a>
                     </div>
                     <div class="col-sm-9">
                         <div class="location_box1">
-                            <h6>Francisco Da Silva</h6>
-                            <span class="m_2_prof">Specialized In: Web Developer at Highest Dreams Inc</span>
+                            <h6><%=(client.first_name + " " + client.last_name )%></h6>
+                            <span class="m_2_prof">Specialized In: <%=client.specialized_in%></span>
                             <div class="person-info">
                                 <ul>
 
-                                    <li><span>Lawyer ID</span>: LW23934</li>
+                                    <li><span>Lawyer ID</span>: <%=client.clientid%></li>
                                     <li><span>Gender</span>: Male</li>
-                                    <li><span>Location</span>: Jackson, 538, USA</li>
-                                    <li><span>Experience</span>: 7 Years</li>
-                                    <li><span>Consultation Fee</span>: ₹500</li>
+                                    <li><span>Location</span>: <%=client.office_address%></li>
+                                    <li><span>Experience</span>: <%=client.experience%> Years</li>
+                                    <li><span>Consultation Fee</span>: ₹<%=client.consultation_fee%></li>
 
                                 </ul>
                             </div>
-                            <div class="read"><a href="/lawyer-detail" class="read-more"> More Info</a></div>
+                            <div class="read"><a href="/lawyer-detail/<%=client.clientid%>" class="read-more"> More
+                                    Info</a></div>
                             <ul class="top-btns">
                                 <li><a href="#" class="fa fa-plus toggle"></a></li>
                                 <li><a href="#" class="fa fa-star"></a></li>
@@ -56,130 +62,11 @@
                     </div>
                     <div class="clearfix"> </div>
                 </div>
-                <div class="tab_grid_prof">
-                    <div class="col-sm-3 loc_1">
-                        <a href="/lawyer-detail"><img src="images/pf2.jpg" alt=""></a>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="location_box1">
-                            <h6>Francisco Da Silva</h6>
-                            <span class="m_2_prof">Specialized In: Web Developer at Highest Dreams Inc</span>
-                            <div class="person-info">
-                                <ul>
 
-                                    <li><span>Lawyer ID</span>: LW23934</li>
+                <%}); %>
 
-                                    <li><span>Gender</span>: Female</li>
-                                    <li><span>Location</span>: Jackson, 538, USA</li>
-                                    <li><span>Experience</span>: 7 Years</li>
-                                    <li><span>Consultation Fee</span>: ₹500</li>
 
-                                </ul>
-                            </div>
-                            <div class="read"><a href="/lawyer-detail" class="read-more"> More Info</a></div>
-                            <ul class="top-btns">
-                                <li><a href="#" class="fa fa-plus toggle"></a></li>
-                                <li><a href="#" class="fa fa-star"></a></li>
-                                <li><a href="#" class="fa fa-link"></a></li>
-                            </ul>
 
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="tab_grid_prof">
-                    <div class="col-sm-3 loc_1">
-                        <a href="/lawyer-detail"><img src="images/pf3.jpg" alt=""></a>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="location_box1">
-                            <h6>Francisco Da Silva</h6>
-                            <span class="m_2_prof">Specialized In: Web Developer at Highest Dreams Inc</span>
-                            <div class="person-info">
-                                <ul>
-
-                                    <li><span>Lawyer ID</span>: LW23934</li>
-
-                                    <li><span>Gender</span>: Male</li>
-                                    <li><span>Location</span>: Jackson, 538, USA</li>
-                                    <li><span>Experience</span>: 7 Years</li>
-                                    <li><span>Consultation Fee</span>: ₹500</li>
-
-                                </ul>
-                            </div>
-                            <div class="read"><a href="/lawyer-detail" class="read-more"> More Info</a></div>
-                            <ul class="top-btns">
-                                <li><a href="#" class="fa fa-plus toggle"></a></li>
-                                <li><a href="#" class="fa fa-star"></a></li>
-                                <li><a href="#" class="fa fa-link"></a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="tab_grid_prof">
-                    <div class="col-sm-3 loc_1">
-                        <a href="/lawyer-detail"><img src="images/pf4.jpg" alt=""></a>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="location_box1">
-                            <h6>Francisco Da Silva</h6>
-                            <span class="m_2_prof">Specialized In: Web Developer at Highest Dreams Inc</span>
-                            <div class="person-info">
-                                <ul>
-
-                                    <li><span>Lawyer ID</span>: LW23934</li>
-
-                                    <li><span>Gender</span>: Female</li>
-                                    <li><span>Location</span>: Jackson, 538, USA</li>
-                                    <li><span>Experience</span>: 7 Years</li>
-                                    <li><span>Consultation Fee</span>: ₹500</li>
-
-                                </ul>
-                            </div>
-                            <div class="read"><a href="/lawyer-detail" class="read-more"> More Info</a></div>
-                            <ul class="top-btns">
-                                <li><a href="#" class="fa fa-plus toggle"></a></li>
-                                <li><a href="#" class="fa fa-star"></a></li>
-                                <li><a href="#" class="fa fa-link"></a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-
-                </div>
-                <div class="tab_grid_prof">
-                    <div class="col-sm-3 loc_1">
-                        <a href="/lawyer-detail"><img src="images/pf2.jpg" alt=""></a>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="location_box1">
-                            <h6>Francisco Da Silva</h6>
-                            <span class="m_2_prof">Specialized In: Web Developer at Highest Dreams Inc</span>
-                            <div class="person-info">
-                                <ul>
-
-                                    <li><span>Lawyer ID</span>: LW23934</li>
-                                    <li><span>Gender</span>: Female</li>
-                                    <li><span>Location</span>: Jackson, 538, USA</li>
-                                    <li><span>Experience</span>: 7 Years</li>
-                                    <li><span>Consultation Fee</span>: ₹500</li>
-
-                                </ul>
-                            </div>
-                            <div class="read"><a href="/lawyer-detail" class="read-more"> More Info</a></div>
-                            <ul class="top-btns">
-                                <li><a href="#" class="fa fa-plus toggle"></a></li>
-                                <li><a href="#" class="fa fa-star"></a></li>
-                                <li><a href="#" class="fa fa-link"></a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
                 <ul class="pagination paging w3-agileits-paging">
                     <li>
                         <a href="#" aria-label="Previous">

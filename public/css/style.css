@@ -148,7 +148,7 @@ label {
 .navbar {
 	position: relative;
 	min-height: 50px;
-	margin-bottom: 0!important;
+	margin-bottom: 0 !important;
 	border: 1px solid transparent;
 }
 
@@ -159,10 +159,10 @@ label {
 
 .navbar-brand {
 	float: left;
-	padding: 0!important;
+	padding: 0 !important;
 	font-size: 18px;
-	line-height: 0px!important;
-	height: 0px!important;
+	line-height: 0px !important;
+	height: 0px !important;
 	text-transform: uppercase;
 	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.29);
 }
@@ -337,6 +337,7 @@ label {
 		min-width: 240px !important;
 		overflow-x: hidden;
 	}
+
 	.navbar-nav {
 		float: left;
 		margin: 0;
@@ -474,7 +475,7 @@ label {
 
 .carousel-caption {
 	position: inherit;
-	min-height: 550px!important;
+	min-height: 550px !important;
 	padding-top: 10em;
 	text-align: center;
 }
@@ -705,7 +706,7 @@ ul.some_agile_facts label {
 }
 
 .panel-default {
-	border: 1px solid #c5c5c5!important;
+	border: 1px solid #c5c5c5 !important;
 	background: #fff;
 }
 
@@ -740,14 +741,14 @@ a.pa_italic:focus {
 .panel-heading {
 	padding: 13px 25px;
 	border-bottom: 1px solid transparent;
-	border-top-left-radius: 0px!important;
-	border-top-right-radius: 0px!important;
-	border-radius: 0!important;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	border-radius: 0 !important;
 }
 
 .panel-group .panel {
 	margin-bottom: 0;
-	border-radius: 0!important;
+	border-radius: 0 !important;
 }
 
 h3.agile_heading.two {
@@ -943,7 +944,7 @@ h3.agile_heading.two {
 	-o-transition: 0.5s all;
 	-ms-transition: 0.5s all;
 	-moz-transition: 0.5s all;
-	color: #000!important;
+	color: #000 !important;
 }
 
 .form-inputs {
@@ -1109,7 +1110,7 @@ h3.tittle.two {
 }
 
 .carousel.slide.two .item {
-	background: none!important;
+	background: none !important;
 }
 
 .testimonials_grid_wthree h4 {
@@ -1333,13 +1334,13 @@ h3.agileinfo_sign {
 }
 
 .modal-header .close {
-	float: right!important;
+	float: right !important;
 }
 
 .form-control:focus {
 	border: 1px solid #ccc;
 	outline: 0;
-	box-shadow: none!important;
+	box-shadow: none !important;
 }
 
 .login-form-rec {
@@ -1938,7 +1939,7 @@ span.m_2_prof {
 /*-- /single--*/
 
 .single-left1 h3 {
-	margin: 2em 0 1em;
+	/* margin: 2em 0 1em; */
 	letter-spacing: 1px;
 	font-size: 1.4em;
 	color: #212121;
@@ -1970,9 +1971,10 @@ span.m_2_prof {
 }
 
 .single-left1 p {
-	margin: 2em 0;
+	/* margin: 2em 0; */
 	color: #666;
 	line-height: 2em;
+	margin-bottom: 10px;
 }
 
 .single-left1 ul li {
@@ -2247,9 +2249,11 @@ h3.agileits-icons-title {
 	h3.agileits-icons-title {
 		font-size: 28px;
 	}
+
 	h3.icon-subheading {
 		font-size: 22px;
 	}
+
 	.icon-box {
 		width: 50%;
 	}
@@ -2259,13 +2263,16 @@ h3.agileits-icons-title {
 	h3.agileits-icons-title {
 		font-size: 28px;
 	}
+
 	h3.icon-subheading {
 		font-size: 25px;
 	}
+
 	.row {
 		margin-right: 0;
 		margin-left: 0;
 	}
+
 	.icon-box {
 		margin: 0;
 	}
@@ -2276,9 +2283,11 @@ h3.agileits-icons-title {
 		float: left;
 		width: 50%;
 	}
+
 	h3.icon-subheading {
 		font-size: 22px;
 	}
+
 	.grid_3.grid_4.w3_agileits_icons_page {
 		margin-top: 0;
 	}
@@ -2288,9 +2297,11 @@ h3.agileits-icons-title {
 	.bs-glyphicons li {
 		width: 31%;
 	}
+
 	h3.agileits-icons-title {
 		font-size: 25px;
 	}
+
 	h3.icon-subheading {
 		font-size: 19px;
 	}
@@ -2300,9 +2311,11 @@ h3.agileits-icons-title {
 	h3.agileits-icons-title {
 		font-size: 23px;
 	}
+
 	h3.icon-subheading {
 		font-size: 18px;
 	}
+
 	.bs-glyphicons li {
 		width: 31.33%;
 	}
@@ -2522,6 +2535,7 @@ h2.typoh2 {
 }
 
 @media (max-width:800px) {
+
 	.grid_3.grid_5.w3ls,
 	.grid_3.grid_5.w3l,
 	.grid_3.grid_5.agileits,
@@ -2535,15 +2549,18 @@ h2.typoh2 {
 	.grid_5 {
 		padding: 0 0 1em;
 	}
+
 	.grid_3 {
 		margin-bottom: 0em;
 	}
+
 	.grid_3.grid_5.w3l {
 		margin-top: 1.5em;
 	}
 }
 
 @media (max-width:640px) {
+
 	h1,
 	.h1,
 	h2,
@@ -2553,6 +2570,7 @@ h2.typoh2 {
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
+
 	.grid_5 h3,
 	.grid_5 h2,
 	.grid_5 h1,
@@ -2562,37 +2580,46 @@ h2.typoh2 {
 	h3.bars {
 		margin-bottom: .5em;
 	}
+
 	ol.breadcrumb li,
 	.grid_3 p,
 	ul.list-group li,
 	li.list-group-item1 {
 		font-size: 14px;
 	}
+
 	.breadcrumb {
 		margin-bottom: 25px;
 	}
+
 	.well {
 		font-size: 14px;
 		margin-bottom: 10px;
 	}
+
 	h2.typoh2 {
 		font-size: 1.5em;
 	}
+
 	.label {
 		font-size: 60%;
 	}
+
 	.in-gp-tl {
 		padding: 0 1em;
 	}
+
 	.in-gp-tb {
 		padding-right: 1em;
 	}
+
 	.list-group {
 		margin-bottom: 20px;
 	}
 }
 
 @media (max-width:480px) {
+
 	.grid_5 h3,
 	.grid_5 h2,
 	.grid_5 h1,
@@ -2602,25 +2629,32 @@ h2.typoh2 {
 	h3.bars {
 		font-size: 1.2em;
 	}
+
 	.table h1 {
 		font-size: 26px;
 	}
+
 	.table h2 {
 		font-size: 23px;
 	}
+
 	.table h3 {
 		font-size: 20px;
 	}
+
 	.label {
 		font-size: 53%;
 	}
+
 	.alert,
 	p {
 		font-size: 14px;
 	}
+
 	.pagination {
 		margin: 20px 0 0px;
 	}
+
 	.grid_3.grid_4.w3layouts {
 		margin-top: 0;
 	}
@@ -2630,9 +2664,11 @@ h2.typoh2 {
 	.grid_4 {
 		margin-top: 18px;
 	}
+
 	h3.title {
 		font-size: 1.6em;
 	}
+
 	.alert,
 	p,
 	ol.breadcrumb li,
@@ -2643,23 +2679,29 @@ h2.typoh2 {
 	a.list-group-item {
 		font-size: 13px;
 	}
+
 	.alert {
 		padding: 10px;
 		margin-bottom: 10px;
 	}
+
 	ul.pagination li a {
 		font-size: 14px;
 		padding: 5px 11px;
 	}
+
 	.list-group {
 		margin-bottom: 10px;
 	}
+
 	.well {
 		padding: 10px;
 	}
+
 	.nav>li>a {
 		font-size: 14px;
 	}
+
 	table.table.table-striped,
 	.table-bordered,
 	.bs-docs-example {
@@ -3151,7 +3193,7 @@ ul.tag2:last-child {
 }
 
 .footer_grid_right input[type="email"]::-webkit-input-placeholder {
-	color: #999!important;
+	color: #999 !important;
 }
 
 .footer_grid_right input[type="submit"] {
@@ -3183,30 +3225,36 @@ ul.social-icons3.two li a {
 
 @media(max-width:1366px) {
 	.carousel-caption {
-		min-height: 524px!important;
+		min-height: 524px !important;
 		padding-top: 10em;
 	}
+
 	.carousel-indicators {
 		bottom: 15%;
 		left: 50%;
 	}
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 3em;
 		font-weight: 300;
 		letter-spacing: 1px;
 	}
+
 	.inner_sec_grids_info_w3ls {
 		margin-top: 3em;
 	}
+
 	.inner_content_info_agileits,
 	.banner-bottom,
 	.services {
 		padding: 5em 0;
 	}
+
 	.testimonials_section {
 		padding: 5em 0 7em 0;
 	}
+
 	.banner_bottom_left h4 {
 		font-size: 1.9em;
 		margin-bottom: 1em;
@@ -3218,14 +3266,17 @@ ul.social-icons3.two li a {
 		font-size: 1.8em;
 		margin-bottom: 1em;
 	}
+
 	.services-left-top h5 {
 		font-size: 0.9em;
 		margin: 1em 0;
 		line-height: 1.8em;
 	}
+
 	.according_inner_grids {
 		padding: 4em 2em;
 	}
+
 	h3.agile_heading.two {
 		margin: 0;
 		font-size: 2.3em;
@@ -3240,14 +3291,17 @@ ul.social-icons3.two li a {
 		line-height: 1.8em;
 		padding-top: 3.5em;
 	}
+
 	h3.tittle {
 		margin: 0;
 		font-size: 2.8em;
 	}
+
 	.login-form {
 		margin: 3em auto 0;
 		width: 85%;
 	}
+
 	.testimonials_grid_wthree h4 {
 		font-size: 1em;
 		line-height: 2.2em;
@@ -3255,18 +3309,22 @@ ul.social-icons3.two li a {
 		padding-left: 2.5em;
 		width: 73%;
 	}
+
 	.footer_grid_left h3 {
 		margin: 0;
 		font-size: 1.3em;
 		line-height: 1.6em;
 	}
+
 	#search_form form {
 		margin: 2em auto 0;
 		width: 90%;
 	}
+
 	.agile_info_mail_img_info {
 		padding: 2em 1em;
 	}
+
 	.inner_page_agile {
 		min-height: 229px;
 		padding-top: 5em;
@@ -3278,18 +3336,22 @@ ul.social-icons3.two li a {
 		margin: 2em auto 0;
 		width: 90%;
 	}
+
 	.agile_info_mail_img_info {
 		padding: 2em 1em;
 	}
+
 	.login-form-rec {
 		margin: 0 auto;
 		width: 65%;
 	}
+
 	ul.links_bottom li.last {
 		margin-right: 0;
 		padding: 5px 18px;
 		margin-top: 1em;
 	}
+
 	.job_info_right {
 		margin-top: 3em;
 	}
@@ -3306,95 +3368,118 @@ ul.social-icons3.two li a {
 		float: left;
 		margin: 0 4px;
 	}
+
 	.inner_content_info_agileits,
 	.banner-bottom,
 	.services {
 		padding: 4em 0;
 	}
+
 	.agile_info_mail_img {
 		min-height: 411px;
 		margin-left: 0;
 		width: 100%;
 	}
+
 	.agile_info_mail_img_info {
 		margin-bottom: 2em;
 		padding: 5em 1em;
 	}
+
 	.footer_grid_left h3 {
 		margin: 0 0 1em 0;
 		font-size: 1.3em;
 		line-height: 1.6em;
 	}
+
 	.footer_grid:nth-child(3) {
 		margin-top: 2em;
 	}
+
 	.services-middle-left:nth-child(2) {
 		padding: 0;
 		margin: 0 0 1em 0;
 	}
+
 	.services-middle-left:nth-child(1) {
 		padding: 0;
 		margin: 0 0 1em 0;
 	}
+
 	.services-left-top1 {
 		margin: 1em 0 0 0;
 	}
+
 	.services-middle {
 		margin-top: 1em;
 	}
+
 	.team_work_agile h4 {
 		font-size: 2em;
 		width: 75%;
 		line-height: 1.8em;
 		padding-top: 3em;
 	}
+
 	.carousel-caption p {
 		letter-spacing: 4px;
 		font-size: 1.1em;
 	}
+
 	.according_info {
 		margin-top: 2em;
 	}
+
 	.mid_services_img {
 		min-height: 500px;
 	}
+
 	.form-inputs,
 	.form-right {
 		position: relative;
 		padding: 0;
 	}
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 2.5em;
 		font-weight: 300;
 		letter-spacing: 1px;
 	}
+
 	.carousel-caption {
-		min-height: 466px!important;
+		min-height: 466px !important;
 		padding-top: 10em;
 	}
+
 	.carousel-indicators {
 		bottom: 7%;
 		left: 50%;
 	}
+
 	#search_form h2 {
 		font-size: 2.3em;
 	}
+
 	.inner_sec_grids_info_w3ls {
 		margin-top: 2em;
 	}
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 2.6em;
 		font-weight: 300;
 		letter-spacing: 1px;
 	}
+
 	.wthree_contact_left_grid {
 		padding: 0;
 	}
+
 	.blog-grid.one {
 		margin-bottom: 0;
 	}
+
 	.blog-grid {
 		padding: 0;
 		width: 48%;
@@ -3408,6 +3493,7 @@ ul.social-icons3.two li a {
 		margin: 0;
 		font-size: 2.6em;
 	}
+
 	.footer_bottom_grid:nth-child(2) {
 		float: left;
 		text-align: left;
@@ -3421,17 +3507,21 @@ ul.social-icons3.two li a {
 	.content.white {
 		padding: 1em 1em;
 	}
+
 	.navbar>.container .navbar-brand,
 	.navbar>.container-fluid .navbar-brand {
 		margin-left: 0px;
 	}
+
 	td.one {
 		padding: 21px 38px;
 		font-size: 0.8em;
 	}
+
 	.banner {
 		min-height: 371px;
 	}
+
 	.navbar-nav {
 		float: none;
 		margin: 0;
@@ -3440,31 +3530,38 @@ ul.social-icons3.two li a {
 		margin-top: 1em;
 		padding: 1em 1em;
 	}
+
 	.navbar-nav>li {
 		float: none;
 		margin: 0 4px;
 	}
+
 	.contact-in {
 		padding-left: 0;
 		padding: 0;
 	}
+
 	.main-content {
 		padding: 3em 1em;
 	}
+
 	.g-left {
 		padding: 0 5px;
 		margin-bottom: 0.7em;
 		float: left;
 		width: 33%;
 	}
+
 	.navbar-default .navbar-collapse,
 	.navbar-default .navbar-form {
-		border: none!important;
+		border: none !important;
 	}
+
 	.navbar-default .navbar-collapse,
 	.navbar-default .navbar-form {
-		border: none!important;
+		border: none !important;
 	}
+
 	.multi-column-dropdown li a {
 		display: block;
 		clear: both;
@@ -3472,15 +3569,18 @@ ul.social-icons3.two li a {
 		color: #fff;
 		white-space: normal;
 	}
+
 	.item-details {
 		float: right;
 		width: 81%;
 		padding: 0;
 	}
+
 	.navbar-nav>li {
 		float: none;
 		margin: 0 4px;
 	}
+
 	.navbar-nav .open .dropdown-menu {
 		position: static;
 		float: none;
@@ -3489,6 +3589,7 @@ ul.social-icons3.two li a {
 		background-color: #e0e1e2;
 		border: 0;
 	}
+
 	.multi-column-dropdown li a {
 		display: block;
 		clear: both;
@@ -3496,91 +3597,113 @@ ul.social-icons3.two li a {
 		white-space: normal;
 		border-bottom: 1px solid #ddd;
 	}
+
 	.multi-column-dropdown li a:nth-child(last) {
 		border: none;
 	}
+
 	#search_form form {
 		margin: 2em auto 0;
 		width: 100%;
 	}
+
 	.search_top input[type="submit"] {
 		width: 20%;
 	}
+
 	.search_top input[type="text"],
 	.search_top input[type="submit"] {
 		width: 23%;
 	}
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 2.2em;
 		letter-spacing: 1px;
 	}
+
 	#search_form {
 		padding: 2em 2em;
 		text-align: center;
 	}
+
 	.team_work_agile h4 {
 		font-size: 1.6em;
 		width: 75%;
 		line-height: 1.8em;
 		padding-top: 3em;
 	}
+
 	.team_work_agile {
 		min-height: 290px;
 	}
+
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a {
 		color: #0c0c0c;
 	}
+
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
 		color: #23b684;
 	}
+
 	.footer_bottom_grid:nth-child(2) {
 		float: left;
 		text-align: left;
 		padding: 0;
 		margin-top: 1.2em;
 	}
+
 	.footer_bottom_grid {
 		padding: 0;
 	}
+
 	.banner_bottom_left h4 {
 		font-size: 1.6em;
 		margin-bottom: 0.6em;
 	}
+
 	.carousel-caption {
-		min-height: 466px!important;
+		min-height: 466px !important;
 		padding-top: 9em;
 	}
+
 	.loc_1 img {
 		width: 42%;
 		margin-bottom: 1em;
 	}
+
 	.candidate_cv {
 		min-height: 632px;
 		padding: 4em 0 4em 0;
 	}
+
 	.testimonials_section {
 		padding: 4em 0 6em 0;
 	}
+
 	.blog-grid p {
 		padding: 0 0em;
 	}
 }
 
 @media(max-width:667px) {
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 2em;
 		letter-spacing: 1px;
 	}
+
 	.carousel-caption {
-		min-height: 420px!important;
+		min-height: 420px !important;
 		padding-top: 7em;
 	}
+
 	.carousel-control {
 		line-height: 23em;
 	}
+
 	.testimonials_grid_wthree h4 {
 		font-size: 1em;
 		line-height: 2.2em;
@@ -3588,48 +3711,60 @@ ul.social-icons3.two li a {
 		padding-left: 0.5em;
 		width: 100%;
 	}
+
 	.testimonials_grid_wthree h5 {
 		font-size: 1.2em;
 	}
+
 	.footer_top_agileits {
 		padding: 3em 0;
 	}
+
 	.banner_bottom_left h4 {
 		font-size: 1.4em;
 		margin-bottom: 0.6em;
 	}
+
 	#search_form h2,
 	h3.agile_heading.two {
 		font-size: 2em;
 	}
+
 	.carousel-indicators {
 		bottom: 1%;
 		left: 50%;
 	}
+
 	.carousel-caption {
-		min-height: 420px!important;
+		min-height: 420px !important;
 		padding-top: 8em;
 	}
+
 	.inner_page_agile {
 		min-height: 169px;
 		padding-top: 3em;
 	}
+
 	.inner_page_agile p {
 		letter-spacing: 3px;
 	}
+
 	h3.tittle {
 		margin: 0;
 		font-size: 2.4em;
 	}
+
 	.single-left1 h3 {
 		margin: 2em 0 1em;
 		letter-spacing: 1px;
 		font-size: 1.2em;
 	}
+
 	.login-form-rec {
 		margin: 0 auto;
 		width: 80%;
 	}
+
 	.form-inputs ul li,
 	.form-inputs ul li {
 		float: left;
@@ -3641,21 +3776,26 @@ ul.social-icons3.two li a {
 	.inner_page_agile h3 {
 		font-size: 2.2em;
 	}
+
 	.inner_page_agile {
 		min-height: 163px;
 		padding-top: 3em;
 	}
+
 	.blog-grid h4 a {
 		font-size: 1.1em;
 	}
+
 	.events_info h5 {
 		font-size: 0.9em;
 	}
+
 	.search_top input[type="text"],
 	.search_top input[type="submit"] {
 		width: 100%;
 		margin-bottom: 8px;
 	}
+
 	.search_top select#country12 {
 		width: 100%;
 		margin-bottom: 10px;
@@ -3663,35 +3803,43 @@ ul.social-icons3.two li a {
 }
 
 @media(max-width:600px) {
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 2.2em;
 		letter-spacing: 1px;
 		line-height: 1.4em;
 	}
+
 	.carousel-caption p {
 		letter-spacing: 3px;
 		font-size: 0.95em;
 		margin: 0.3em 0 1em 0;
 	}
+
 	.carousel-caption {
-		min-height: 392px!important;
+		min-height: 392px !important;
 		padding-top: 6em;
 	}
+
 	.team_work_agile h4 {
 		font-size: 1.4em;
 		width: 80%;
 	}
+
 	.team_work_agile {
 		min-height: 250px;
 	}
+
 	.carousel-caption a {
 		padding: 9px 18px;
 		font-size: 0.9em;
 	}
+
 	.carousel-control {
 		line-height: 19em;
 	}
+
 	.inner_content_info_agileits,
 	.banner-bottom,
 	.services {
@@ -3704,23 +3852,29 @@ ul.social-icons3.two li a {
 		font-size: 1.4em;
 		width: 90%;
 	}
+
 	h3.tittle {
 		margin: 0;
 		font-size: 2.2em;
 	}
+
 	.footer_grid_right input[type="submit"] {
 		width: 25%;
 	}
+
 	.footer_bottom h6 {
 		font-size: 1.1em;
 	}
+
 	.mid_services_img {
 		min-height: 299px;
 	}
+
 	.inner_breadcrumb {
 		width: 90%;
 		margin: 0 auto;
 	}
+
 	.map iframe {
 		width: 100%;
 		min-height: 300px;
@@ -3734,55 +3888,69 @@ ul.social-icons3.two li a {
 		font-size: 1.4em;
 		width: 90%;
 	}
+
 	.footer_grid_right input[type="email"] {
 		width: 65%;
 	}
+
 	.footer_grid_right input[type="submit"] {
 		width: 29%;
 	}
+
 	.blog-grid {
 		padding: 0;
 		width: 100%;
 		margin: 1.8% 0%;
 		float: left;
 	}
+
 	.single-left1 ul {
 		text-align: left;
 	}
+
 	.single-left1 ul li {
 		margin-right: 10px;
 		margin-bottom: 10px;
 	}
+
 	.single-left1 h3 {
 		margin: 1em 0 1em;
 		letter-spacing: 1px;
 		font-size: 1em;
 	}
+
 	.permit h3,
 	.experience h3,
 	h5.widget-title {
 		font-size: 1.2em;
 	}
+
 	.inner_page_agile h3 {
 		font-size: 1.8em;
 	}
+
 	.inner_page_agile {
 		min-height: 141px;
 		padding-top: 2.5em;
 	}
+
 	h3.tittle {
 		margin: 0;
 		font-size: 1.8em;
 	}
+
 	.inner_sec_grids_info_w3ls {
 		margin-top: 1.7em;
 	}
+
 	.location_box1 h6 {
 		font-size: 1.1em;
 	}
+
 	h3.tittle.three {
 		font-size: 1.6em;
 	}
+
 	.login-form-rec {
 		margin: 0 auto;
 		width: 100%;
@@ -3795,58 +3963,74 @@ ul.social-icons3.two li a {
 		width: 90%;
 		padding-top: 2.6em;
 	}
+
 	.team_work_agile {
 		min-height: 205px;
 	}
+
 	.services-left-top {
 		padding: 2em 1em;
 	}
+
 	#search_form h2,
 	h3.agile_heading.two {
 		font-size: 1.6em;
 	}
+
 	.according_inner_grids {
 		padding: 2em 1em;
 	}
+
 	h3.tittle {
 		margin: 0;
 		font-size: 2em;
 	}
+
 	.candidate_cv {
 		min-height: 632px;
 		padding: 3em 0 3em 0;
 	}
+
 	.login-form textarea {
 		height: 81px;
 	}
+
 	.login-form input[type="submit"] {
 		padding: 10px 0;
 	}
+
 	.testimonials_section {
 		padding: 3em 0 6em 0;
 	}
+
 	.login-form {
 		margin: 1em auto 0;
 		width: 99%;
 	}
+
 	.form-left,
 	.form-right {
 		padding: 1em;
 	}
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 2.1em;
 	}
+
 	.banner_bottom_left p {
 		font-size: 0.9em;
 	}
+
 	.banner_bottom_left h4 {
 		font-size: 1.2em;
 		margin-bottom: 0.6em;
 	}
+
 	ul.some_agile_facts label {
 		font-size: 1.2em;
 	}
+
 	ul.some_agile_facts li {
 		font-size: 1em;
 	}
@@ -3857,13 +4041,16 @@ ul.social-icons3.two li a {
 		margin: 0;
 		font-size: 1.7em;
 	}
+
 	.footer_grid_right input[type="email"] {
 		width: 100%;
 		margin-bottom: 10px;
 	}
+
 	.footer_grid_right input[type="submit"] {
 		width: 50%;
 	}
+
 	.form-inputs ul li,
 	.form-inputs ul li {
 		float: none;
@@ -3880,14 +4067,17 @@ ul.social-icons3.two li a {
 		left: 34.2%;
 		width: 190px;
 	}
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 2em;
 	}
+
 	.carousel-caption {
-		min-height: 350px!important;
+		min-height: 350px !important;
 		padding-top: 4em;
 	}
+
 	.loc_1 img {
 		width: 100%;
 		margin-bottom: 1em;
@@ -3899,10 +4089,12 @@ ul.social-icons3.two li a {
 		padding: 2em 1em;
 		text-align: center;
 	}
+
 	.banner_bottom_left h4 {
 		font-size: 1em;
 		margin-bottom: 0.6em;
 	}
+
 	ul.some_agile_facts span.fa {
 		text-align: center;
 		line-height: 53px;
@@ -3910,22 +4102,27 @@ ul.social-icons3.two li a {
 		display: block;
 		margin-bottom: 1em;
 	}
+
 	.team_work_agile h4 {
 		font-size: 1.1em;
 		width: 90%;
 		padding-top: 2.6em;
 	}
+
 	h3.tittle {
 		margin: 0;
 		font-size: 1.6em;
 	}
+
 	.panel-title {
 		font-size: 0.9em;
 	}
+
 	#search_form h2,
 	h3.agile_heading.two {
 		font-size: 1.5em;
 	}
+
 	.carousel-caption a {
 		padding: 9px 18px;
 		font-size: 0.8em;
@@ -3933,12 +4130,14 @@ ul.social-icons3.two li a {
 }
 
 @media(max-width:320px) {
+
 	.carousel-caption h2,
 	.carousel-caption h3 {
 		font-size: 1.6em;
 	}
+
 	.carousel-caption {
-		min-height: 290px!important;
+		min-height: 290px !important;
 		padding-top: 3em;
 	}
 }
